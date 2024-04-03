@@ -1,0 +1,249 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}Hello AboutController!{% endblock %}
+
+{% block body %}
+    <!-- Start Top Section -->
+    <div class="Top">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1>A Propos</h1>
+                        <p class="mb-4">Découvrez, achetez et personnalisez votre art</p>
+                        <p><a href="" class="btn btn-secondary me-2">Acheter maintenant</a><a href="#" class="btn btn-white-outline">Voir plus</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="Top-img-wrap">
+                        <img src={{ asset('/assets/Portrait-top.png') }} class="img-fluid" alt="" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Section -->
+
+
+
+    <!-- Start Advantage -->
+    <div class="advantage">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6">
+                <h2 class="section-title">Pourquoi nous choisir</h2>
+
+                <div class="row my-5">
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src={{ asset('/assets/truck.svg') }} alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>Livraison rapide et gratuite</h3>
+                            <p>Ne perdez plus de temps à attendre votre colis !</p>
+
+                            <p> Profitez d'une livraison rapide et gratuite sur tous nos produits.</p>
+
+                            <p> C'est simple, rapide et sans frais supplémentaires !</p>
+
+                            <p> Commandez dès aujourd'hui et recevez votre colis en un clin d'œil !</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src={{ asset('/assets/bag.svg') }} alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>Simple et claire</h3>
+                            <p>Pas de complications, pas de frais supplémentaires</p>
+                            <p>Votre satisfaction est notre priorité.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src={{ asset('/assets/support.svg') }} alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>24/7 Support</h3>
+                            <p>On est là pour vous </p>
+                            <p> Vous avez une question ? Un problème ?</p>
+
+                            <p> Ne vous inquiétez pas, notre assistance est disponible 24 heures sur 24, 7 jours sur
+                                7.</p>
+
+                            <p> Contactez-nous par téléphone, chat en ligne ou email, et nous serons ravis de vous
+                                aider.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src={{ asset('/assets/return.svg') }} alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>Retour Gratuit</h3>
+                            <p>Changez d'avis ? Pas de problème !</p>
+
+                            <p> Bénéficiez d'un retour gratuit sur tous vos achats.</p>
+
+                            <p> Renvoyez vos articles en toute simplicité, sans aucun frais supplémentaire.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="img-wrap">
+                    <img src={{ asset('/assets/tableau.jpg') }} alt="Image" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- End Advantage -->
+
+    <!-- Start Testimonial Slider -->
+    <div class="testimonial-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h2 class="section-title">Avis</h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="testimonial-slider-wrap text-center">
+
+                        <div id="testimonial-nav">
+                            <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+                            <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+                        </div>
+
+                        <div class="testimonial-slider">
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;Avant de découvrir ArtWise, j'achetais de l'art uniquement
+                                                    dans des galeries physiques. Mais depuis que j'ai découvert la
+                                                    plateforme, je suis devenu un véritable adepte de l'achat d'art en
+                                                    ligne. ArtWise offre une expérience d'achat fluide et sécurisée,
+                                                    avec un service client réactif et à l'écoute. J'apprécie également
+                                                    la possibilité de contacter directement les artistes pour leur poser
+                                                    des questions sur leurs œuvres.&rdquo;</p>
+                                            </blockquote>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;En tant que passionné d'art, je suis toujours à la recherche
+                                                    de nouvelles œuvres à ajouter à ma collection. ArtWise est une
+                                                    véritable mine d'or pour les amateurs d'art comme moi. La plateforme
+                                                    propose une large sélection d'oeuvres originales et uniques à des
+                                                    prix abordables. J'apprécie particulièrement les descriptions
+                                                    détaillées et les biographies des artistes, qui me permettent de
+                                                    mieux comprendre le contexte et l'inspiration derrière chaque
+                                                    création. La fonctionnalité de recherche avancée est également très
+                                                    efficace pour trouver des œuvres spécifiques qui correspondent à mes
+                                                    goûts.&rdquo;</p>
+                                            </blockquote>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;J'ai toujours été intimidé par l'idée d'acheter de l'art, mais
+                                                    ArtWise a rendu l'expérience tellement facile et agréable ! La
+                                                    plateforme est intuitive et conviviale, et la sélection d'oeuvres
+                                                    est incroyablement diverse. J'ai pu découvrir des artistes émergents
+                                                    que j'adore et acheter des pièces uniques qui correspondent à mon
+                                                    style. Le processus d'achat était simple et sécurisé, et la
+                                                    livraison a été rapide. Je recommande vivement ArtWise à tous ceux
+                                                    qui recherchent une façon accessible et intuitive de découvrir et
+                                                    d'acheter de l'art.&rdquo;</p>
+                                            </blockquote>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;Dès que je me connecte à ArtWise, je suis immédiatement charmé
+                                                    par l'interface moderne et épurée de la plateforme. La présentation
+                                                    des œuvres est claire et valorisante, ce qui permet de les apprécier
+                                                    pleinement. J'aime aussi la possibilité de créer des collections et
+                                                    de partager mes coups de cœur avec mes amis. L'offre de bienvenue
+                                                    généreuse pour les nouveaux utilisateurs est un excellent moyen de
+                                                    commencer à explorer la plateforme et de découvrir de nouveaux
+                                                    artistes.&rdquo;</p>
+                                            </blockquote>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;Je suis un utilisateur régulier d'ArtWise depuis plusieurs
+                                                    mois et je suis très satisfait de la plateforme. Je trouve que le
+                                                    choix d'oeuvres est large et diversifié, même si j'aimerais voir
+                                                    plus d'oeuvres d'art figuratif et de paysages. Le système de
+                                                    recommandation d'oeuvres pourrait également être plus précis. Malgré
+                                                    ces quelques points d'amélioration, je recommande vivement ArtWise à
+                                                    tous les amateurs d'art. C'est une plateforme prometteuse avec un
+                                                    fort potentiel !&rdquo;</p>
+                                            </blockquote>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonial Slider -->
+{% endblock %}

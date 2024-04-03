@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+{% set sorting = app.request.query.get('sorting') %}
+{% set minPrice = app.request.query.get('minPrice') %}
+{% set maxPrice = app.request.query.get('maxPrice') %}
+{% set category = app.request.query.get('category') %}
+
+{% block body %}
+    <!-- Start Top Section -->
+    <div class="Top">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1>Boutique</h1>
+                        <p class="mb-4">Découvrez, achetez et personnalisez votre art</p>
+                        <p>
+                            <a href="" class="btn btn-secondary me-2">Découvrir les Artistes</a><a href="#" class="btn btn-white-outline">Accueil</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="Top-img-wrap">
+                        <img src={{ asset('/assets/Portrait-top.png') }} class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Section -->
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-inline" method="get" onsubmit="handleFormSubmit(event)">
+                            <div class="row align-items-center">
+                                <div class="col-sm-2 form-group">
+                                    <label for="triPrix" class="mr-2">Trier par :</label>
+                                    <select class="form-control" name="sorting" id="triPrix">
+                                        <option value="prixCroissant" {% if sorting == 'prixCroissant' %}selected{% endif %}>Prix croissant</option>
+                                        <option value="prixDecroissant" {% if sorting == 'prixDecroissant' %}selected{% endif %}>Prix décroissant</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label for="prixMin" class="mr-2">Prix min :</label>
+                                    <input type="number" class="form-control" id="prixMin" name="minPrice" value="{{ minPrice }}">
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label for="prixMax" class="mr-2">Prix max :</label>
+                                    <input type="number" class="form-control" id="prixMax" name="maxPrice" value="{{ maxPrice }}">
+                                </div>
+                                <div class="col-sm-2 form-group">
+                                    <label for="categorie" class="mr-2">Catégorie :</label>
+                                    <select class="form-control" id="categorie" name="category">
+                                        <option value="0" {% if category == '0' %}selected{% endif %}>Toutes les catégories</option>
+                                        {% for cat in categories %}
+                                            <option value="{{ cat.id }}" {% if category == cat.id %}selected{% endif %}>{{ cat.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Appliquer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="product-section before-footer-section">
+            <div class="container">
+                <div class="row">
+
+                    
+                    {% set sortedProducts = products
+                        |filter(product => 
+                            (not minPrice or product.price >= minPrice) and
+                            (not maxPrice or product.price <= maxPrice) and
+                            (not category or product.category.id == category)
+                        )
+                        |sort((a, b) => 
+                            sorting == 'prixCroissant' ? a.price <=> b.price :
+                            sorting == 'prixDecroissant' ? b.price <=> a.price :
+                            0
+                        )
+                    %}
+
+                    {% set totalDisplayedProducts = 0 %}
+                    {% for product in sortedProducts %}
+                        {% set totalDisplayedProducts = totalDisplayedProducts + 1 %}
+                        <div class="col-12 col-md-4 col-lg-3 mb-5">
+                            <a class="product-item" href="{{ path('Product', {'id': product.id}) }}">
+                                <img src="/uploads/images/{{ product.images }}" class="img-fluid product-thumbnail">
+                                <h3 class="product-title">{{ product.name }}</h3>
+                                <strong class="product-price">{{ product.price }}€</strong>
+                                <span class="icon-cross">
+                                    <img src="{{ asset('/assets/cross.svg') }}" class="img-fluid">
+                                </span>
+                            </a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <div class="text-center mt-3">
+                    <p>Total des produits affichés : {{ totalDisplayedProducts }}</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function handleFormSubmit(event) {
+                event.preventDefault();
+                const minPrice = document.getElementById('prixMin').value;
+                const maxPrice = document.getElementById('prixMax').value;
+                if (minPrice && maxPrice && minPrice > maxPrice) {
+                    alert('Le prix minimum doit être inférieur au prix maximum');
+                }
+
+                event.target.submit();
+            }
+        </script>
+
+
+{% endblock %}
+    

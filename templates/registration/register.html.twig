@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card p-4 rounded-3 shadow">
+                    <h2 class="mb-4 text-center">Inscription</h2>
+                    {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
+
+                    <div class="mb-3">
+                        {{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Adresse email'}}) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_row(form.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Vous êtes:</label>
+                        <div class="form-check">
+                            {{ form_label(form.roles, 'Utilisateur', {'label_attr': {'class': 'form-check-label'}}) }}
+                            {{ form_widget(form.roles.children['0'], {'attr': {'class': 'form-check-input'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form_row(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form_row(form.fname, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form_row(form.tel, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone'}}) }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form_row(form.numero_de_voie, {'attr': {'class': 'form-control', 'placeholder': 'Numéro de voie'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_row(form.nom_de_voie, {'attr': {'class': 'form-control', 'placeholder': 'Nom de voie'}}) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_row(form.code_postal, {'attr': {'class': 'form-control', 'placeholder': 'Code postal'}}) }}
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        {{ form_row(form.agreeTerms, {'label': 'J\'accepte les termes et conditions', 'label_attr': {'class': 'form-check-label'}, 'attr': {'class': 'form-check-input'}}) }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

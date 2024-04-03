@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% block nav %}
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="navigation bar">
+
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('Accueil') }}">ArtWise<span>.</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars"
+                    aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbars">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    {% if app.request.get('_route') == 'Accueil' %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('Accueil') }}">Accueil</a>
+                        </li>
+                    {% else %}
+                        <li><a class="nav-link" href="{{ path('Accueil') }}">Accueil</a></li>
+                    {% endif %}
+
+
+                    {% if app.request.get('_route') == 'Boutique' %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('Boutique') }}">Boutique</a>
+                        </li>
+                    {% else %}
+                        <li><a class="nav-link" href="{{ path('Boutique') }}">Boutique</a></li>
+                    {% endif %}
+
+
+                    {% if app.request.get('_route') == 'Articles' %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('Articles') }}">Articles</a>
+                        </li>
+                    {% else %}
+                        <li><a class="nav-link" href="{{ path('Articles') }}">Articles</a></li>
+                    {% endif %}
+
+
+                    {% if app.request.get('_route') == 'à propos' %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('à propos') }}">A propos</a>
+                        </li>
+                    {% else %}
+
+                        <li><a class="nav-link" href="{{ path('à propos') }}">A propos</a></li>
+                    {% endif %}
+
+                    {% if app.request.get('_route') == 'Contact' %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('Contact') }}">Contact</a>
+                        </li>
+                    {% else %}
+                        <li><a class="nav-link" href="{{ path('Contact') }}">Contact</a></li>
+                    {% endif %}
+
+                </ul>
+
+                <ul class="custom-navbar-user custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5 align-items-center">
+                    {% if app.user %}
+                        <li><a class="nav-link" href="{{ path('cart-index') }}"><img
+                                        src="{{ asset('/assets/cart.svg') }}"></a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li><a class="nav-link" href="/api">API</a></li>
+                            <li><a class="nav-link" href="{{ path('admin') }}">Admin Panel</a></li>
+                        {% endif %}
+                        <li><a class="nav-link" href="{{ path('app_logout') }}"><img
+                                        src="{{ asset('/assets/logout.svg') }}"></a></li>
+                    {% else %}
+                        <li><a class="nav-link" href="{{ path('app_login') }}"><img
+                                        src="{{ asset('/assets/user.svg') }}"></a>
+                        <li><a class="nav-link" href="{{ path('app_register') }}">Inscription</a></li>
+
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+{% endblock %}
+{% block body %}{% endblock %}
+</body>
+<!-- Start Footer Section -->
+<footer class="footer-section">
+    <div class="container relative">
+
+        <div class="foot-img">
+            <img src={{ asset('/assets/polygonia-08.png') }} alt="Image" class="img-fluid">
+        </div>
+
+
+        <div class="row g-5 mb-5">
+            <div class="col-lg-4">
+                <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">ArtWise<span>.</span></a></div>
+                <p class="mb-4">La plateforme intuitive et conviviale pour découvrir et acheter des œuvres d'art
+                    uniques.</p>
+
+                <p class="mb-4">Explorez une sélection diversifiée d'œuvres d'art provenant d'artistes émergents et
+                    établis, et profitez d'un processus d'achat en ligne simple et sécurisé.</p>
+
+                <ul class="list-unstyled custom-social">
+                    <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="row links-wrap">
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">A propos</a></li>
+                            <li><a href="#">Les Boutiques</a></li>
+                            <li><a href="#">Articles</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-top copyright">
+            <div class="row pt-4">
+                <div class="col-lg-6">
+                    <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        . All Rights Reserved. &mdash; Designed with love by <a>ArtWise</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-6 text-center text-lg-end">
+                    <ul class="list-unstyled d-inline-flex ms-auto">
+                        <li class="me-4"><a href="#">Conditions</a></li>
+                        <li><a href="#">Politique de Confidentialiter </a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    {% block custom %}
+        <script src={{ asset('/assets/bootstrap.bundle.min.js') }}></script>
+        <script src={{ asset('/assets/tiny-slider.js') }}></script>
+        <script src={{ asset('/assets/custom.js') }}></script>
+
+    {% endblock %}
+
+</footer>
+</html>
