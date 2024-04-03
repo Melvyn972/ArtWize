@@ -27,6 +27,7 @@ Définir les informations de connexion à la base de données (nom d'hôte, nom 
 Le dossier csv contient tous les fichiers nécessaires pour remplir la base de données.
 
   1: Importez les fichiers CSV dans la base de données. Vous pouvez utiliser un outil comme MySQL Workbench pour le faire.
+      Tuto en cas de besoins: https://www.youtube.com/watch?v=rOS9roXbbmo
 
   2: Assurez-vous que les données ont été importées correctement.
 
