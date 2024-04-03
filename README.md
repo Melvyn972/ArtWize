@@ -40,11 +40,11 @@ L'application sera accessible à l'adresse https://127.0.0.1:8000/
 
 Étape 7: Connexion Admin
 
-Dans les données inclus dans la base de données un compte avec les droits admin pour pouvoir tester toute les autres fonctionnaliter du site ( Le pannel Admin ou l'ecran API )
+Dans les données incluses dans la base de données, un compte avec les droits administrateur est nécessaire pour pouvoir tester toutes les autres fonctionnalités du site (le panneau d'administration ou l'écran API).
 
 Identifiant: admin2@gmail.com
 
 Mot de passe : 123456
 
 ## Plus d'information
-#### Vous trouverez des informations complementaire au projet dans le dossier Word
+#### Vous trouverez des informations complementaires au projet dans le dossier Word
