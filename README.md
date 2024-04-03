@@ -15,8 +15,8 @@ Prérequis:
 
 Étape 3: Lancez les commandes suivantes :
 
-composer install
-yarn install
+    composer install
+    yarn install
 
 Étape 4: Créez la base de données et configurez l'application.
 
@@ -26,15 +26,15 @@ Définir les informations de connexion à la base de données (nom d'hôte, nom 
 Étape 5: Chargement des données
 Le dossier csv contient tous les fichiers nécessaires pour remplir la base de données.
 
-Étape 1: Importez les fichiers CSV dans la base de données. Vous pouvez utiliser un outil comme MySQL Workbench pour le faire.
+  1: Importez les fichiers CSV dans la base de données. Vous pouvez utiliser un outil comme MySQL Workbench pour le faire.
 
-Étape 2: Assurez-vous que les données ont été importées correctement.
+  2: Assurez-vous que les données ont été importées correctement.
 
 Étape 6: Démarrage
 
 L'application est maintenant prête à être utilisée. Lancez la commande suivante pour démarrer le serveur :
 
-symfony server:start
+    symfony server:start
 
 L'application sera accessible à l'adresse https://127.0.0.1:8000/
 
@@ -42,9 +42,9 @@ L'application sera accessible à l'adresse https://127.0.0.1:8000/
 
 Dans les données incluses dans la base de données, un compte avec les droits administrateur est nécessaire pour pouvoir tester toutes les autres fonctionnalités du site (le panneau d'administration ou l'écran API).
 
-Identifiant: admin2@gmail.com
+    Identifiant: admin2@gmail.com
 
-Mot de passe : 123456
+    Mot de passe : 123456
 
 ## Plus d'information
 #### Vous trouverez des informations complementaires au projet dans le dossier Word
