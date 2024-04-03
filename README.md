@@ -5,7 +5,7 @@ Ce guide vous explique comment installer, configurer et utiliser le site.
 
 Prérequis:
 
-#### Avoir un environnement de développement avec PHP et Composer installés.
+#### Avoir un environnement de développement avec PHP 8.1, Symfony et Composer installés.
 #### Avoir une base de données MySQL accessible.
 
 ## Installation
