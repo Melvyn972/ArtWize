@@ -45,3 +45,6 @@ Dans les données inclus dans la base de données un compte avec les droits admi
 Identifiant: admin2@gmail.com
 
 Mot de passe : 123456
+
+## Plus d'information
+#### Vous trouverez des informations complementaire au projet dans le dossier Word
