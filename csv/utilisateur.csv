@@ -1,0 +1,51 @@
+1,admin@gmail.com,"[""ROLE_ADMIN""]","",Admin,Admin,606060606,101,de l'admin,75000
+2,jean@example.com,"[""ROLE_USER""]",k7GbMh1m7MrwIw9rzueDIBSeXc9TziV9JBp8SMyClqIP,Parnove,Jean,625325689,1,Rue de Paris,75000
+3,marie@example.com,"[""ROLE_USER""]",T4hEswy8qnP1qXxjSkW27R5vIMz3FgAU0p9bdloO6RCd,Lefebvre,Marie,614578932,15,Avenue Victor Hugo,69000
+4,antoine@example.com,"[""ROLE_USER""]",P3X7Dvm5gEnL2QWtazfy1cBYIr9M0lRFSN6sGhbkJqeu,Bertrand,Antoine,632145789,8,Rue du Faubourg Saint-Honoré,33000
+5,pierre@example.com,"[""ROLE_USER""]",hashed_password_4,Dubois,Pierre,603214578,20,Boulevard Haussmann,54000
+6,sophie@example.com,"[""ROLE_USER""]",hashed_password_5,Moreau,Sophie,651487932,5,Rue de la République,13000
+7,thomas@example.com,"[""ROLE_USER""]",hashed_password_6,Leroy,Thomas,609875231,12,Avenue des Champs-Élysées,69000
+8,laura@example.com,"[""ROLE_USER""]",hashed_password_7,Garcia,Laura,621459876,30,Place de la Bastille,75011
+9,nicolas@example.com,"[""ROLE_USER""]",hashed_password_8,Martinez,Nicolas,635478912,9,Rue de Rivoli,75001
+10,amelie@example.com,"[""ROLE_USER""]",hashed_password_9,Fournier,Amélie,612345987,25,Avenue Montaigne,75008
+11,julien@example.com,"[""ROLE_USER""]",hashed_password_10,Girard,Julien,674512398,18,Rue Saint-Honoré,75001
+12,sophia@example.com,"[""ROLE_USER""]",hashed_password_11,Rousseau,Sophia,630987654,7,Boulevard Saint-Germain,75006
+13,lucas@example.com,"[""ROLE_USER""]",hashed_password_12,Lemoine,Lucas,646789012,22,Place de la Concorde,75008
+14,emma@example.com,"[""ROLE_USER""]",hashed_password_13,Andre,Emma,608745123,4,Rue de la Paix,75002
+15,antoine2@example.com,"[""ROLE_USER""]",hashed_password_14,Lefevre,Antoine,690123456,27,Avenue Foch,75116
+16,clara@example.com,"[""ROLE_USER""]",hashed_password_15,Mercier,Clara,615239847,33,Rue du Bac,75007
+17,gabriel@example.com,"[""ROLE_USER""]",hashed_password_16,Dupont,Gabriel,602134789,6,"Avenue de l""Opéra",75009
+18,lea@example.com,"[""ROLE_USER""]",hashed_password_17,Sanchez,Léa,633789214,11,Rue de la Pompe,75116
+19,enzo@example.com,"[""ROLE_USER""]",hashed_password_18,Roussel,Enzo,628945671,14,Rue de Rennes,75006
+20,eva@example.com,"[""ROLE_USER""]",hashed_password_19,Hubert,Eva,609823745,17,Boulevard Montmartre,75002
+21,louis@example.com,"[""ROLE_USER""]",hashed_password_20,Benoit,Louis,661234789,2,Avenue Marceau,75016
+22,jade@example.com,"[""ROLE_USER""]",hashed_password_21,Legrand,Jade,642189375,19,Rue Saint-Antoine,75004
+23,leo@example.com,"[""ROLE_USER""]",hashed_password_22,Garnier,Léo,600987123,21,"Avenue de l""Étoile",75017
+24,anna@example.com,"[""ROLE_USER""]",hashed_password_23,Lecomte,Anna,675312489,16,Place Vendôme,75001
+25,adam@example.com,"[""ROLE_USER""]",hashed_password_24,Renaud,Adam,654789123,13,Rue Royale,75008
+26,manon@example.com,"[""ROLE_USER""]",hashed_password_25,Marchand,Manon,601239875,23,Rue de la Boétie,75008
+27,luca@example.com,"[""ROLE_USER""]",hashed_password_26,Guerin,Luca,632198745,26,Avenue de la Grande Armée,75017
+28,lina@example.com,"[""ROLE_USER""]",hashed_password_27,Meyer,Lina,646789231,10,Rue de Sèvres,75007
+29,maxime@example.com,"[""ROLE_USER""]",hashed_password_28,Dufour,Maxime,613279845,28,Avenue de Wagram,75017
+30,inès@example.com,"[""ROLE_USER""]",hashed_password_29,Blanc,Inès,607891234,31,Rue du Faubourg Saint-Honoré,75008
+31,lucas2@example.com,"[""ROLE_USER""]",hashed_password_30,Colin,Lucas,660987123,24,Avenue des Ternes,75017
+32,juliette@example.com,"[""ROLE_USER""]",hashed_password_31,Perrin,Juliette,645781239,29,Rue de Rivoli,75004
+33,gabriel2@example.com,"[""ROLE_USER""]",hashed_password_32,Caron,Gabriel,618923745,32,Boulevard Saint-Michel,75005
+34,emma2@example.com,"[""ROLE_USER""]",hashed_password_33,Hoarau,Emma,691234567,35,Avenue des Champs-Élysées,75008
+35,leon@example.com,"[""ROLE_USER""]",hashed_password_34,Roux,Léon,622349871,36,Rue de Vaugirard,75015
+36,jade2@example.com,"[""ROLE_USER""]",hashed_password_35,Barbier,Jade,601287934,39,Rue de la Paix,75002
+37,timéo@example.com,"[""ROLE_USER""]",hashed_password_36,Lecompte,Timéo,611234789,38,Avenue Montaigne,75008
+38,louise@example.com,"[""ROLE_USER""]",hashed_password_37,Guillaume,Louise,635127489,41,Place de la Concorde,75008
+39,noah@example.com,"[""ROLE_USER""]",hashed_password_38,Philippe,Noah,642398715,42,Rue du Bac,75007
+40,eva2@example.com,"[""ROLE_USER""]",hashed_password_39,Lemoine,Eva,660987123,43,Rue Saint-Honoré,75001
+41,gabin@example.com,"[""ROLE_USER""]",hashed_password_40,Rouxel,Gabin,689123456,44,Avenue Marceau,75016
+42,lina2@example.com,"[""ROLE_USER""]",hashed_password_41,Royer,Lina,622987134,45,Rue de la Boétie,75008
+43,adam2@example.com,"[""ROLE_USER""]",hashed_password_42,Dupuy,Adam,601239874,46,Rue Royale,75008
+44,chloé@example.com,"[""ROLE_USER""]",hashed_password_43,Morel,Chloé,632189475,47,Avenue des Ternes,75017
+45,noah2@example.com,"[""ROLE_USER""]",hashed_password_44,Renaud,Noah,675891234,48,Rue du Faubourg Saint-Honoré,75008
+46,juliette2@example.com,"[""ROLE_USER""]",hashed_password_45,Roche,Juliette,660123987,49,Boulevard Haussmann,75009
+47,test@test.com,"[""ROLE_USER""]",$2y$13$m.GKskpFw5W1a9tWTLO0TOixSBEX7972oER8VBbvC88C4VkeY6ra6,test,test,654523698,12,test,62223
+48,jcedme@yahoo.fr,"[""ROLE_USER""]",$2y$13$wViszSDVPSgsJo9IHThRNeS4FMfd2Ogzun2Shw6y6E/we62H/LmNi,Edme,Jean-Claude,682412302,25,rue du bac,75007
+49,admin2gmail.com,"[""ROLE_USER""]",$2y$13$3hKa0ZRFYz1va4juV2mMIuoRwF5MNuUtQSwTgknXNDq8XWQK.0G6q,AD,AD,6060707,54,Admin,92230
+50,admin2@gmail.com,"[""ROLE_ADMIN""]",$2y$13$SpIdrY.3cZyUGhoQIwgyJu.wlnhuZNbzXA7CkdIQ2jZJggv4PB.fq,AD,AD,6060707,54,Admin,92230
+51,nijel@gmail.com,"[""ROLE_USER""]",$2y$13$iRUwZty0E.sksap2Cs9G.eIH9WVpO9yKl6ujKlgIeWS0W/8w8DQYW,Sarmiento,Nijel,625452384,38,rue miggggggg,75016
