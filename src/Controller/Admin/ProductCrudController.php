@@ -52,7 +52,10 @@ class ProductCrudController extends AbstractCrudController
             DateField::new('createdAt')
                 ->setLabel('Ajouté le:'),
             DateField::new('updateAt')
-                ->setLabel('Mis à jour le:'),
+                ->setLabel('Mis à jour le:')
+                ->setFormTypeOptions([
+                    'required' => true,
+                ]),
             NumberField::new('price')
                 ->setLabel('Prix'),
             TextField::new('imageFile')
