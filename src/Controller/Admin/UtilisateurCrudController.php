@@ -28,12 +28,18 @@ class UtilisateurCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        yield IntegerField::new('id')
+            ->setLabel('id')
+            ->onlyOnIndex();
         yield TextField::new('name')
             ->setLabel('Nom');
         yield TextField::new('fname')
             ->setLabel('Prénom');
         yield TextField::new('email')
             ->setLabel('Email');
+        yield TextField::new('password')
+            ->setLabel('Mot de passe')
+            ->onlyWhenCreating();
         yield ArrayField::new('roles')
             ->setLabel('Roles');
         yield IntegerField::new('tel')
