@@ -6,6 +6,7 @@ use App\Controller\Admin\Filters\CaseInsensitiveTextFilter;
 use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -17,11 +18,20 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\DomCrawler\Image;
+use Symfony\Component\Security\Csrf\CsrfToken;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class ProductCrudController extends AbstractCrudController
 {
+    private $csrfTokenManager;
+
+    public function __construct(CsrfTokenManagerInterface $csrfTokenManager)
+    {
+        $this->csrfTokenManager = $csrfTokenManager;
+    }
+
     public static function getEntityFqcn(): string
     {
         return Product::class;
@@ -69,5 +79,18 @@ class ProductCrudController extends AbstractCrudController
             ->add(CaseInsensitiveTextFilter::new('name'))
             ->add('category');
 
+    }
+
+    public function deleteEntity(\Doctrine\ORM\EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        $request = $this->crud->getRequest();
+
+        $token = new CsrfToken('delete', $request->request->get('_token'));
+
+        if (!$this->csrfTokenManager->isTokenValid($token)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        parent::deleteEntity($entityManager, $entityInstance);
     }
 }
