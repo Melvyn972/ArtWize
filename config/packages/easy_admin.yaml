@@ -1,2 +1,6 @@
 easy_admin:
   default_language: fr
+  entities:
+    Product:
+      class: App\Entity\Product
+      csrf_protection: true
