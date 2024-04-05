@@ -16,11 +16,13 @@ class CategoryCrudController extends AbstractCrudController
     {
         return Category::class;
     }
+
     public function configureFields(string $pageName): iterable
     {
         return [
             IntegerField::new('id')
-                ->setLabel('id'),
+                ->setLabel('id')
+                ->onlyOnIndex(),
             TextField::new('name')
                 ->setLabel('Nom de la catégorie'),
             TextField::new('slug')

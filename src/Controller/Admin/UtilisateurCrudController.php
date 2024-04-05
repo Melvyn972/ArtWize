@@ -32,6 +32,8 @@ class UtilisateurCrudController extends AbstractCrudController
             ->setLabel('Nom');
         yield TextField::new('fname')
             ->setLabel('Prénom');
+        yield TextField::new('email')
+            ->setLabel('Email');
         yield ArrayField::new('roles')
             ->setLabel('Roles');
         yield IntegerField::new('tel')
