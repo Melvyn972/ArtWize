@@ -45,16 +45,6 @@
                         <li><a class="nav-link" href="{{ path('Boutique') }}">Boutique</a></li>
                     {% endif %}
 
-
-                    {% if app.request.get('_route') == 'Articles' %}
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('Articles') }}">Articles</a>
-                        </li>
-                    {% else %}
-                        <li><a class="nav-link" href="{{ path('Articles') }}">Articles</a></li>
-                    {% endif %}
-
-
                     {% if app.request.get('_route') == 'à propos' %}
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ path('à propos') }}">A propos</a>
