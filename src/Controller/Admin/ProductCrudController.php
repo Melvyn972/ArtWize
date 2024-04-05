@@ -73,4 +73,10 @@ class ProductCrudController extends AbstractCrudController
             ->add('category');
 
     }
+    public function configureOptions(): iterable
+    {
+        return [
+            'csrf_protection' => true,
+        ];
+    }
 }
