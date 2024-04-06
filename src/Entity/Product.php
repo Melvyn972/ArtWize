@@ -32,18 +32,9 @@ class Product
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?bool $online = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $createdAt = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $updateAt = null;
-
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $images = null;
-    
+
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'images')]
     private ?File $imageFile = null;
 
@@ -104,42 +95,6 @@ class Product
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function isOnline(): ?bool
-    {
-        return $this->online;
-    }
-
-    public function setOnline(bool $online): static
-    {
-        $this->online = $online;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): static
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getUpdateAt(): ?\DateTimeInterface
-    {
-        return $this->updateAt;
-    }
-
-    public function setUpdateAt(\DateTimeInterface $updateAt): static
-    {
-        $this->updateAt = $updateAt;
 
         return $this;
     }
