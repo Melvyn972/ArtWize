@@ -30,7 +30,13 @@ class ProductCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDefaultSort(['name' => 'ASC']);
+            ->setDefaultSort(['name' => 'ASC'])
+            ->setEntityLabelInSingular('Produit')
+            ->setPageTitle('index', 'CRUD des Produits')
+            ->setPageTitle('new', 'Création de Produit')
+            ->setPageTitle('edit', 'Édition de Produit')
+            ->setPageTitle('detail', 'Détails de Produit');
+
     }
 
     public function configureFields(string $pageName): iterable
@@ -47,8 +53,6 @@ class ProductCrudController extends AbstractCrudController
                 
             AssociationField::new('category')
                 ->setLabel('Catégorie'),
-            BooleanField::new('online')
-                ->setLabel('En ligne'),
             DateField::new('createdAt')
                 ->setLabel('Ajouté le:'),
             DateField::new('updateAt')

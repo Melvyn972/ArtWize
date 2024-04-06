@@ -23,7 +23,12 @@ class UtilisateurCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDefaultSort(['name' => 'ASC', 'fname' => 'ASC']);
+            ->setDefaultSort(['name' => 'ASC', 'fname' => 'ASC'])
+            ->setEntityLabelInSingular('Utilisateur')
+            ->setPageTitle('index', 'CRUD des Utilisateurs')
+            ->setPageTitle('new', 'Création de Utilisateur')
+            ->setPageTitle('edit', 'Édition de Utilisateur')
+            ->setPageTitle('detail', 'Détails de Utilisateur');
     }
 
     public function configureFields(string $pageName): iterable
@@ -65,4 +70,6 @@ class UtilisateurCrudController extends AbstractCrudController
             ->add(CaseInsensitiveTextFilter::new('code_postal'));
 
     }
+
+
 }
