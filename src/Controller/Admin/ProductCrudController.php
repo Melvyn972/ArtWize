@@ -50,20 +50,13 @@ class ProductCrudController extends AbstractCrudController
                 ->setLabel('En tete'),
             TextField::new('description')
                 ->setLabel('Description'),
-                
             AssociationField::new('category')
                 ->setLabel('Catégorie'),
-            DateField::new('createdAt')
-                ->setLabel('Ajouté le:'),
-            DateField::new('updateAt')
-                ->setLabel('Mis à jour le:')
-                ->setFormTypeOptions([
-                    'required' => true,
-                ]),
             NumberField::new('price')
                 ->setLabel('Prix'),
             TextField::new('imageFile')
-                ->setFormType(VichImageType::class),
+                ->setFormType(VichImageType::class)
+                ->hideonindex(),
             ImageField::new('images')
                 ->setBasePath('/uploads/images')
                 ->onlyOnIndex(),
@@ -77,6 +70,7 @@ class ProductCrudController extends AbstractCrudController
             ->add('category');
 
     }
+
     public function configureOptions(): iterable
     {
         return [

@@ -138,10 +138,6 @@ class Product
     public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
-
-        if (null !== $imageFile) {
-            $this->updateAt = new \DateTimeImmutable();
-        }
     }
 
     public function getImageFile(): ?File
