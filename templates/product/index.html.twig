@@ -117,7 +117,7 @@
                 event.preventDefault();
                 const minPrice = document.getElementById('prixMin').value;
                 const maxPrice = document.getElementById('prixMax').value;
-                if (minPrice && maxPrice && minPrice > maxPrice) {
+                if (minPrice > maxPrice) {
                     alert('Le prix minimum doit être inférieur au prix maximum');
                 }
 
