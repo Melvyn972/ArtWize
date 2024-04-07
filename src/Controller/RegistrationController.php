@@ -29,10 +29,7 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer les rôles depuis le formulaire
-            $roles = $form->get('roles')->getData();
-            // Affecter les rôles à l'utilisateur
-            $user->setRoles($roles);
+            $user->setRoles((array)'ROLE_USER');
 
             // Encoder le mot de passe
             $user->setPassword(

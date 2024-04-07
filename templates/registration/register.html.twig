@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}ArtWise | Inscription{% endblock %}
 
 {% block body %}
     <div class="container mt-5">
@@ -16,14 +16,6 @@
 
                     <div class="mb-3">
                         {{ form_row(form.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }}
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Vous êtes:</label>
-                        <div class="form-check">
-                            {{ form_label(form.roles, 'Utilisateur', {'label_attr': {'class': 'form-check-label'}}) }}
-                            {{ form_widget(form.roles.children['0'], {'attr': {'class': 'form-check-input'}}) }}
-                        </div>
                     </div>
 
                     <div class="row">

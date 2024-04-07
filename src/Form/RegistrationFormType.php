@@ -11,16 +11,24 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email')
+            ->add('email', TextType::class, [
+                'constraints' => [
+                    new Email([
+                        'message' => 'L\'email "{{ value }}" n\'est pas un email valide.',
+                    ]),
+                ],
+            ])
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
                 'label' => 'Mot de passe',
@@ -31,20 +39,10 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit faire au minimum {{ limit }} characterès',
+                        'minMessage' => 'Votre mot de passe doit faire au minimum {{ limit }} charactères',
                         'max' => 40,
                     ]),
                 ],
-            ])
-            ->add('roles', ChoiceType::class, [
-                'mapped' => false,
-                'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
-                ],
-                'multiple' => true,
-                'expanded' => true,
-                'label' => 'Vous êtes:',
-                'required' => true,
             ])
             ->add('name', TextType::class, [
                 'label' => 'Nom',
@@ -54,6 +52,16 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('tel', IntegerType::class, [
                 'label' => 'Téléphone',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Entrez votre numéro de téléphone',
+                    ]),
+                    new Length([
+                        'min' => 10,
+                        'max' => 10,
+                        'exactMessage' => 'Votre numéro de téléphone n\'est pas valide',
+                    ]),
+                ],
             ])
             ->add('numero_de_voie', IntegerType::class, [
                 'label' => 'Numéro de voie',
@@ -63,6 +71,16 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('code_postal', IntegerType::class, [
                 'label' => 'Code postal',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Entrez votre numéro de téléphone',
+                    ]),
+                    new Length([
+                        'min' => 5,
+                        'max' => 5,
+                        'exactMessage' => 'Votre code postal n\'est pas valide',
+                    ]),
+                ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
