@@ -57,8 +57,8 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Entrez votre numéro de téléphone',
                     ]),
                     new Length([
-                        'min' => 10,
-                        'max' => 10,
+                        'min' => 9,
+                        'max' => 9,
                         'exactMessage' => 'Votre numéro de téléphone n\'est pas valide',
                     ]),
                 ],
