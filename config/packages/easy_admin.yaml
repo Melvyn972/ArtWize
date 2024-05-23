@@ -1,3 +1,4 @@
 easy_admin:
   default_language: fr
   csrf_protection: true
+  https: true
